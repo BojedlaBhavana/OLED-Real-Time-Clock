@@ -1,51 +1,63 @@
-# OLED RTC Analog Clock
+# OLED RTC Digital & Analog Clock
 
-A real-time analog clock developed using a microcontroller, OLED display, and RTC module.
+A real-time clock project using an OLED display and DS3231 RTC module.
+The clock automatically switches between digital and analog display modes.
 
-## Project Overview
+## Features
 
-This project displays the current time in an analog clock format on an OLED display. 
-The RTC module is used to maintain accurate time, while the microcontroller processes
-the time data and renders the clock interface on the OLED display.
+- Real-time digital clock
+- Analog clock display
+- Automatic mode switching every 3 seconds
+- Date display in digital mode
+- Loading/booting screen
+- Smooth OLED refresh
+- Accurate timekeeping using DS3231 RTC
+- I2C communication
 
 ## Components Used
 
-- Microcontroller
-- OLED Display
-- RTC Module
+- Arduino-compatible microcontroller
+- 0.96-inch OLED Display (128x64)
+- DS3231 RTC Module
 - Breadboard
 - Jumper Wires
 - USB Cable
 
-## Features
+## Software & Libraries
 
-- Real-time clock display
-- Analog clock interface on OLED
-- RTC-based accurate timekeeping
-- I²C communication
-- Compact embedded-system implementation
-
-## Technologies
-
-- Embedded C/C++
 - Arduino IDE
-- I²C Communication
-- OLED Display
-- RTC
+- C/C++
+- Adafruit GFX Library
+- Adafruit SSD1306 Library
+- RTClib
+- Wire Library
 
 ## Working
 
-The RTC module provides the current time through I²C communication.
-The microcontroller reads the time data and calculates the position of
-the clock hands. The resulting analog clock is displayed on the OLED screen.
+The DS3231 RTC module provides the current time and date to the
+microcontroller through I2C communication.
 
-## Project Image
+The microcontroller processes the time information and displays it
+on the 128x64 OLED screen.
 
-![OLED RTC Analog Clock](images/project.jpg)
+The display automatically switches between:
 
-## Applications
+1. Digital Clock
+2. Analog Clock
 
-- Digital/analog clock systems
-- Embedded systems
-- IoT projects
-- Real-time display applications
+The mode changes every 3 seconds.
+
+## Digital Mode
+
+The digital mode displays:
+
+- Hours
+- Minutes
+- Seconds
+- Date
+
+Example:
+
+```text
+12:30:45
+2026-09-27
